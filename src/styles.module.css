@@ -20,10 +20,17 @@ h1, h2, h3, h4, h5, h6, p {
 .main {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     max-width: 500px;
     height: 100vh;
     margin: 0 auto;
+    padding: 2rem;
+}
+
+@media (min-width: 1024px) {
+    main {
+        justify-content: center;
+    }
 }
 
 .headline {
@@ -183,9 +190,15 @@ h1, h2, h3, h4, h5, h6, p {
     display: flex;
     align-items: center;
     justify-content: end;
-    max-width: 75%;
+    max-width: 100%;
     margin-left: auto;
     overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    .accordionContent {
+        max-width: 75%;
+    }
 }
 
 .accordionContentBox {
