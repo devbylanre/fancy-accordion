@@ -1,0 +1,206 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.03rem;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 500px;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.headline {
+    font-size: 3.6rem;
+    text-align: center;
+    font-weight: 500;
+    color: #0D0D0D;
+}
+
+.textTime {
+    font-size: 1.4rem;
+    color: #7d7d7d;
+    padding: 0rem 1.8rem;
+
+}
+
+.accordionsBox {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    margin-top: 4rem;
+}
+
+.accordions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.accordionButton {
+    display: inline-flex;
+    align-items: center;
+    gap: .75rem;
+    border: none;
+    width: fit-content;
+    background-color: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+.accordionButton::after, .accordionButton::before {
+    content: '';
+    position: absolute;
+    height: 20px;
+    bottom: 0;  
+}
+
+.accordionButton::before {
+    z-index: 0;
+    width: 20px;
+    left: -7px;    
+    background-color: #f3f4f6;
+    border-bottom-right-radius: 1.5rem;
+}
+
+.accordionButton::after {
+    z-index: 1;
+    left: -10px;
+    width: 10px;
+    background: white;
+    border-bottom-right-radius: 1rem;
+}
+
+.accordionButtonWrapper {
+    position: relative;
+    padding:  1.7rem 1.8rem;
+    border-radius: 2.4rem;
+    background-color: #f3f4f6;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.accordionButtonWrapper p {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #0D0D0D;
+    transition: color 0.2s ease-in-out;
+}
+
+.accordionButtonAction {
+    width: 16px;
+    height: 16px;
+    border: 1px solid #0D0D0D;
+    border-radius: 999rem;
+    padding: 0.1rem;
+    color: #0D0D0D;
+    transition: all 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accordionButton:hover .accordionButtonAction {
+    color: white;
+    border-color: #60a5fa;
+    background-color: #60a5fa;
+}
+
+.accordionButton:hover .accordionButtonWrapper {
+    background-color: #eff6ff;
+}
+
+.accordionButton:hover .accordionButtonWrapper p {
+    color: #60a5fa;
+}
+
+.accordionButtonActive .accordionButtonWrapper {
+    background-color: #eff6ff;
+}
+
+.accordionButtonActive .accordionButtonWrapper p {
+    color: #60a5fa;
+}
+
+.accordionButtonActive .accordionButtonAction {
+    color: white;
+    border-color: #60a5fa;
+    background-color: #60a5fa;
+}
+
+.accordionButtonWrapper svg {
+    width: 28px;
+    height: 28px;
+    position: absolute;
+    
+}
+
+.accordions .accordion:nth-child(1) .accordionButtonWrapper svg {
+    top: -14px;
+    right: 0;
+    transform: rotate(16deg);
+    fill: #f77170;
+    transition: fill 0.2s ease-in-out;
+}
+
+.accordions .accordion:nth-child(4) .accordionButtonWrapper svg {
+    top: 0px;
+    left: -12px;
+    transform: rotate(-16deg);
+    fill: #facc16;
+}
+
+.accordions .accordion:nth-child(1) .accordionButton:hover .accordionButtonWrapper svg {
+    fill: #ef4444;
+}
+
+.accordions .accordion:nth-child(4) .accordionButton:hover .accordionButtonWrapper svg {
+    fill: #eab308;
+}
+
+.accordionContent {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    max-width: 75%;
+    margin-left: auto;
+    overflow: hidden;
+}
+
+.accordionContentBox {
+    color: white;
+    padding: 1.6rem;
+    width: 100%;
+    background-color: #60a5fa;
+    border-bottom-left-radius: 2.4rem;
+    border-top-left-radius: 2.4rem;
+    border-top-right-radius: 2.4rem;
+}
+
+.accordionContentBox p {
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: white;
+    line-height: 2rem;
+}
