@@ -89,18 +89,23 @@ function App() {
                 {/* content */}
                 <motion.div
                   className={Styles.accordionContent}
-                  initial={{ height: '0px' }}
-                  animate={{ height: isOpen ? 'auto' : '0px' }}
+                  initial={{ height: '0px', opacity: 0 }}
+                  animate={{
+                    height: isOpen ? 'auto' : '0px',
+                    opacity: isOpen ? 1 : 0,
+                  }}
                   transition={{ duration: 0.3 }}
                 >
                   <AnimatePresence>
                     {isOpen && (
                       <motion.div
+                        exit={{ y: -32 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        initial={{ opacity: 0, scale: 0.975 }}
+                        initial={{ opacity: 0, scale: 0.975, y: 0 }}
                         transition={{
-                          ease: [0.75, 0.5, 0, 0],
+                          ease: 'easeInOut',
                           delay: 0.4,
+                          // y: { duration: 0.1 },
                           duration: 0.2,
                         }}
                         className={Styles.accordionContentBox}
