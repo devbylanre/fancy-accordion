@@ -138,11 +138,19 @@ h1, h2, h3, h4, h5, h6, p {
     background-color: #eff6ff;
 }
 
+.accordionButton:hover::before {
+    background-color: #eff6ff;
+}
+
 .accordionButton:hover .accordionButtonWrapper p {
     color: #60a5fa;
 }
 
 .accordionButtonActive .accordionButtonWrapper {
+    background-color: #eff6ff;
+}
+
+.accordionButtonActive.accordionButton::before {
     background-color: #eff6ff;
 }
 
